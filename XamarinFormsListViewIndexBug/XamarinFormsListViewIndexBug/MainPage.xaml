@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinFormsListViewIndexBug"
+             x:Class="XamarinFormsListViewIndexBug.MainPage"
+             x:DataType="local:MainPage">
+    <ListView ItemsSource="{Binding Path=Items}">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="x:String">
+                <ViewCell>
+                    <Label Text="{Binding Path=.}" />
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
