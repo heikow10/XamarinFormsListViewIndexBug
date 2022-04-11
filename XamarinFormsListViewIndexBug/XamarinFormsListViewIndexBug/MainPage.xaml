@@ -4,10 +4,13 @@
              xmlns:local="clr-namespace:XamarinFormsListViewIndexBug"
              x:Class="XamarinFormsListViewIndexBug.MainPage"
              x:DataType="local:MainPage">
-    <ListView ItemsSource="{Binding Path=Items}">
+    <ListView ItemsSource="{Binding Path=Items}" ItemSelected="ListView_ItemSelectedAsync" ItemTapped="ListView_ItemTappedAsync">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="x:String">
                 <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Context" Clicked="MenuItem_ClickedAsync" />
+                    </ViewCell.ContextActions>
                     <Label Text="{Binding Path=.}" />
                 </ViewCell>
             </DataTemplate>
