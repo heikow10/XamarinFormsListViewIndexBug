@@ -10,7 +10,30 @@ namespace XamarinFormsListViewIndexBug
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<string>() { "first item", "second item", };
+            Items = new ObservableCollection<string>()
+            {
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+            };
 
             BindingContext = this;
         }
@@ -33,6 +56,11 @@ namespace XamarinFormsListViewIndexBug
             {
                 await DisplayAlert("MenuItem_Clicked", "item = " + item, "OK");
             }
+        }
+
+        private void ScrollToButton_Clicked(object sender, EventArgs e)
+        {
+            MyListView.ScrollTo("3", ScrollToPosition.Start, false);
         }
     }
 }

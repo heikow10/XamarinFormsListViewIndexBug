@@ -4,16 +4,19 @@
              xmlns:local="clr-namespace:XamarinFormsListViewIndexBug"
              x:Class="XamarinFormsListViewIndexBug.MainPage"
              x:DataType="local:MainPage">
-    <ListView ItemsSource="{Binding Path=Items}" ItemSelected="ListView_ItemSelectedAsync" ItemTapped="ListView_ItemTappedAsync">
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="x:String">
-                <ViewCell>
-                    <ViewCell.ContextActions>
-                        <MenuItem Text="Context" Clicked="MenuItem_ClickedAsync" />
-                    </ViewCell.ContextActions>
-                    <Label Text="{Binding Path=.}" />
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout Orientation="Vertical">
+        <Button Text="ScrollTo 3" Clicked="ScrollToButton_Clicked" />
+        <ListView x:Name="MyListView" ItemsSource="{Binding Path=Items}" ItemSelected="ListView_ItemSelectedAsync" ItemTapped="ListView_ItemTappedAsync">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="x:String">
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Context" Clicked="MenuItem_ClickedAsync" />
+                        </ViewCell.ContextActions>
+                        <Label Text="{Binding Path=.}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
