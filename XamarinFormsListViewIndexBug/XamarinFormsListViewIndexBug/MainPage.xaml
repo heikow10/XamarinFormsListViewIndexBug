@@ -6,7 +6,14 @@
              x:DataType="local:MainPage">
     <StackLayout Orientation="Vertical">
         <Button Text="ScrollTo 3" Clicked="ScrollToButton_Clicked" />
-        <ListView x:Name="MyListView" ItemsSource="{Binding Path=Items}" ItemSelected="ListView_ItemSelectedAsync" ItemTapped="ListView_ItemTappedAsync">
+        <ListView x:Name="MyListView" ItemsSource="{Binding Path=Items}" Header="" HasUnevenRows="True" ItemSelected="ListView_ItemSelectedAsync" ItemTapped="ListView_ItemTappedAsync">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Label Text="Header" BackgroundColor="LightGray" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="x:String">
                     <ViewCell>
